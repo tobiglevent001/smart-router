@@ -144,7 +144,7 @@ class Classifier:
             )
 
         # Priority 7: Medium-length with questions and keywords
-        if 200 < features.length <= 2000 and features.keyword_count >= 2:
+        if features.length <= 2000 and features.keyword_count >= 2:
             return (
                 TierLevel.T1,
                 0.70,
@@ -152,7 +152,16 @@ class Classifier:
                 f"info retrieval or analysis",
             )
 
-        # Priority 8: Very short messages with no signals
+        # Priority 8: Short with keywords (e.g. "分析一下趋势")
+        if features.length <= 200 and features.keyword_count >= 1:
+            return (
+                TierLevel.T1,
+                0.65,
+                f"Short message ({features.length} chars) with task keyword — "
+                f"likely an actionable request",
+            )
+
+        # Priority 9: Very short messages with no signals
         if features.length <= 200:
             return (
                 TierLevel.T0,

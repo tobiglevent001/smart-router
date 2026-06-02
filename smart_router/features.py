@@ -23,7 +23,9 @@ _FILE_PATH_PATTERN = re.compile(
 _KEYWORD_PATTERN = re.compile(
     r"(?:"
     r"重构|优化|审计|安全|迁移|部署|设计|架构|"
+    r"分析|计算|查询|搜索|统计|生成|对比|评估|"
     r"refactor|optimize|audit|security|migrate|deploy|design|architecture|"
+    r"analyze|analysis|search|query|generate|compare|evaluate|"
     r"并发|竞态|deadlock|race|thread|"
     r"concurrent|deadlock|race\s*condition|thread|"
     r"加密|auth|oauth|jwt|token|certificate|"
