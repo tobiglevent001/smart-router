@@ -1,0 +1,11 @@
+# SmartRouter
+__pycache__/
+*.pyc
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+*.local
+.DS_Store
+smart-router-config.yaml

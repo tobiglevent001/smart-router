@@ -1,0 +1,42 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "smart-router"
+version = "0.1.0"
+description = "Token-efficient AI task routing — classify complexity, recommend optimal model"
+readme = "README.md"
+license = { text = "Apache-2.0" }
+authors = [
+    { name = "Qijing Digital Technology / 淇经数字科技" },
+]
+requires-python = ">=3.10"
+keywords = ["ai", "agent", "routing", "cost-optimization", "llm", "hermes-agent", "opensquilla"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.urls]
+Homepage = "https://github.com/tobiglevent001/smart-router"
+Repository = "https://github.com/tobiglevent001/smart-router"
+Documentation = "https://github.com/tobiglevent001/smart-router#readme"
+
+[project.scripts]
+smart-router = "smart_router.cli:main"
+
+[project.optional-dependencies]
+hermes = []  # No extra deps needed — Hermes integration is plugin-based
+
+[tool.hatch.build.targets.wheel]
+packages = ["smart_router"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]

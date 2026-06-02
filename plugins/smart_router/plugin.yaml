@@ -1,0 +1,10 @@
+name: smart-router
+version: "0.1.0"
+description: >
+  SmartRouter — Token-efficient AI task routing. Classifies incoming
+  messages by complexity and recommends the optimal model/provider
+  tier. Uses rule-based analysis (zero ML deps) for reliable,
+  transparent routing decisions.
+author: "Qijing Digital Technology / 淇经数字科技"
+hooks:
+  - pre_llm_call
